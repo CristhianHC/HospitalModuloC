@@ -55,7 +55,8 @@ Yii::app()->clientscript
 							array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 							array('label'=>'Contact', 'url'=>array('/site/contact')),
 							array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-							array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+							array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+                                                        array('label'=>'Ficha 08 ('.Yii::app()->user->name.')', 'url'=>array('/ficha08/create'), 'visible'=>!Yii::app()->user->isGuest)
 						),
 					)); ?>
 					
