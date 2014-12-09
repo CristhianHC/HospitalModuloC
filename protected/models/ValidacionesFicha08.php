@@ -1,42 +1,15 @@
 <?php
 
-class ValidacionesFicha08 extends CFormModel{
-    public $alergico;
-    public $clinico;
-    public $ginecologico;
-    public $traumatologo;
-    public $quirurgico;
-    public $farmacologico;
-    public $psiquiatrico;
-    public $otro;
-    public $ruc;
-    
-    public $via_area_libre;
-    public $via_area_obstruida;
-    public $condicion_estable;
-    public $condicion_inestable;
-    public $comentario5;
-    
-    public $presion_arterial;
-    public $presion_cardiaca;
-    public $f_respirat_min;
-    public $temp_bucal;
-    public $temp_axilar;
-    public $peso;
-    public $talla;
-    public $ocular;
-    public $verbal;
-    public $motora;
-    public $total;
-    public $reaccion_pupila_der;
-    public $reaccion_pupila_izq;
-    public $t_llenado_capilar;
-    public $satura_oxigeno;
-    
-    
-    
-     public function rules(){
+class ValidacionesFicha08 extends CFormModel {
+
+    public $herina_penetrante, $herda_cortante, $fractura_expuesta, $fractura_cerrada, $cuerpo_extraño, $hemorragia, $mordedura,
+            $picadura, $excoriacion, $deformidad_masa, $hematoma, $eritema_inflacion, $luxacion_esguince, $quemadura;
+    public $via_area_obstruida, $cabeza, $cuello, $torax, $abdomen, $columna, $pelvis, $extremidad;
+    public $gestas;
+
+    public function rules() {
         return array(
-        );           
+        );
     }
+
 }
