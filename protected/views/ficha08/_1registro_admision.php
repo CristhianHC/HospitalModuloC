@@ -1,8 +1,7 @@
-<a href="#myModal1" role="button" class="btn btn-primary input-xxlarge" data-toggle="modal">1.-Registro Admision</a>
 <div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Modal header</h3>
+        <h3 id="myModalLabel">Modal header1</h3>
     </div>
     <div class="modal-body" >
         <?php

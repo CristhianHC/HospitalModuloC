@@ -1,4 +1,3 @@
-<a href="#myModal5" role="button" class="btn btn-primary input-xxlarge" data-toggle="modal">5.-Enfermedad actual y revision de sistema</a>
 <div id="myModal5" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
