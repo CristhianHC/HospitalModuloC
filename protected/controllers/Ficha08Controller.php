@@ -4,37 +4,62 @@ class Ficha08Controller extends Controller {
 
     public $layout = '//layouts/columna3';
 
-    public function actionIndex() {
+/*    public function actionIndex() {
         $model = new ValidacionesFicha08;
         $this->render('index', array('model' => $model,));
-    }
+    }*/
 
     public function actionCreate($id) {
-        $model = new InicioAtencionMotivoF08;
+        $modelInicioAtencionMotivo = new InicioAtencionMotivoF08;
+        $modelFicha08 = new Ficha08;
+        $model = new Paciente;
 
-        // Uncomment the following line if AJAX validation is needed
-        $this->performAjaxValidation($model, "inicioatencionmotivof08-create-form");
-        if (Yii::app()->request->isAjaxRequest) {
-            if (isset($_POST['InicioAtencionMotivoF08'])) {
-                $model->attributes = $_POST['InicioAtencionMotivoF08'];
-                if ($model->save()) {
-                    echo $model->id_iam;
-                } else {
-                    echo "false";
-                }
-                return;
+        $this->performAjaxValidation($modelInicioAtencionMotivo, 'inicio-atencion-motivo-f08-form');
+        $this->performAjaxValidation($modelFicha08, 'ficha08-form');
+        
+        if (isset($_POST['Ficha08'])) {
+            if (isset($_POST['Ficha08']['idIamF08']))
+                $modelFicha08->idIamF08 = $_POST['Ficha08']['idIamF08'];
+            $modelFicha08->attributes = $_POST['Ficha08'];
+            if ($modelFicha08->save()) {
+                $this->redirect(array('view', 'id' => $modelFicha08->id_f08));
             }
-        } else {
-            if (isset($_POST['InicioAtencionMotivoF08'])) {
-                $model->attributes = $_POST['InicioAtencionMotivoF08'];
-                if ($model->save())
-                    $this->redirect(array('view', 'id' => $model->id_iam));
-            }
-
-            $this->render('create', array(
-                'model' => $model,'paciente' => $this->loadModel($id),
-            ));
         }
+
+
+
+        $this->render('create', array(
+            'modelFicha08' => $modelFicha08,
+        ));
+    }
+    	public function actionView($id)
+	{
+                    $modelInicioAtencionMotivo = new InicioAtencionMotivoF08;
+        $modelFicha08s = Ficha08::model()->findAll();
+        $model = new Paciente;
+        if (isset($_POST['InicioAtencionMotivoF08'])) {
+            $modelInicioAtencionMotivo->attributes = $_POST['InicioAtencionMotivoF08'];
+            if($modelInicioAtencionMotivo->save()){
+        $conexion = Yii::app()->db;
+        $consulta = "UPDATE archivo.ficha_08 SET id_iam_f08=$modelInicioAtencionMotivo->id_iam WHERE id_f08=$id;";
+        $ejecutar = $conexion->createCommand($consulta);
+        $ejecutar->query();
+                 $this->redirect(array('view', 'id' => $id));
+            }
+        }
+		$this->render('view', array(
+			'modelFicha08' => $this->loadModeFicha08($id),
+                    'modelFicha08s'=>$modelFicha08s,
+                    'modelInicioAtencionMotivo' => $modelInicioAtencionMotivo,
+                    'model' => $model,
+		));
+	}
+
+    public function loadModeFicha08($id, $modelClass = __CLASS__) {
+		$model = Ficha08::model()->findByPk($id);
+		if($model === null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
     }
 
     public function loadModel($id, $modelClass = __CLASS__) {
@@ -45,7 +70,7 @@ class Ficha08Controller extends Controller {
     }
 
     protected function performAjaxValidation($model, $form = null) {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'inicio-atencion-motivo-f08-form') {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === $form) {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
