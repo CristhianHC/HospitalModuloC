@@ -28,9 +28,9 @@ $this->breadcrumbs = array(
                             'items' => array(
                                 array('label' => 'Panel Control',
                                     'items' => array(
-                                        array('label' => 'Subir Imagenes', 'url' => array('/ficha08/create/' . $p->idpaciente . '')),
-                                        array('label' => 'Editar Imagenes', 'url' => array('/panelUsuario/editfolder')),
-                                        array('label' => 'Configuracion', 'url' => array('/panelUsuario/configuracion')),
+                                        array('label' => 'Ficha 08', 'url' => array('/ficha08/create/' . $p->idpaciente . '')),
+                                        array('label' => 'Ficha 000', 'url' => array('/panelUsuario/editfolder')),
+                                        array('label' => 'Ficha 000', 'url' => array('/panelUsuario/configuracion')),
                                     )
                                 ),
                             ),

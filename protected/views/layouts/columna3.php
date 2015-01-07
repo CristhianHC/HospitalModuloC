@@ -6,11 +6,11 @@
         <section class="span3">
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
-                    <a href="#myModal1" class="" role="button"  data-toggle="modal">1.-Inicio Atencion y Motivo</a>
+                    <a href="#myModal1" class="" role="button"  data-toggle="modal">1.-Registro de Admision</a>
                     <br>
                     <a href="#myModal2" role="button"  data-toggle="modal">2.-Inicio Atencion y Motivo</a>
                     <br>
-                    <a href="#myModal3" role="button"  data-toggle="modal">3.-Inicio Atencion y Motivo</a>
+                    <a href="#myModal3" role="button"  data-toggle="modal">3.-Accidente,violencia, intoxicacion, envenenamiento o quemadura</a>
                     <br>
                     <a href="#myModal4" role="button"  data-toggle="modal">4.-Inicio Atencion y Motivo</a>
                     <br>

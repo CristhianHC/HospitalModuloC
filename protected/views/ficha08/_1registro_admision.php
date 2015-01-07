@@ -24,32 +24,22 @@
 
             <?php echo $form->textFieldRow($modelFicha08, 'id_f08', array('class' => 'span5')) ?><br>
 
-            <?php Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
-    $this->widget('CJuiDateTimePicker',array(
-        'model'=>$modelFicha08, //Model object
-        'attribute'=>'fecha_emision', //attribute name
-                'mode'=>'datetime' //use "time","date" or "datetime" (default)
-    ));
-?>
+            <?php
+            Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
+            $this->widget('CJuiDateTimePicker', array(
+                'model' => $modelFicha08, //Model object
+                'attribute' => 'fecha_emision', //attribute name
+                'mode' => 'datetime' //use "time","date" or "datetime" (default)
+            ));
+            ?>
         </div>
-        <div class="modal-footer">
-            <div class="form-actions">
-                <?php
-                $this->widget('bootstrap.widgets.TbButton', array(
-                    'buttonType' => 'submit',
-                    'type' => 'primary',
-                    'label' => $modelFicha08->isNewRecord ? Yii::t('AweCrud.app', 'Create') : Yii::t('AweCrud.app', 'Save'),
-                ));
-                ?>
-                <?php
-                $this->widget('bootstrap.widgets.TbButton', array(
-                    //'buttonType'=>'submit',
-                    'label' => Yii::t('AweCrud.app', 'Cancel'),
-                    'htmlOptions' => array('onclick' => 'javascript:history.go(-1)')
-                ));
-                ?>
-            </div>
-            <?php $this->endWidget(); ?>
+<div class="modal-footer">
+        <div class="row buttons">
+            <?php echo CHtml::submitButton($modelFicha08->isNewRecord ? 'Create' : 'Save',array('class'=>'btn btn-primary')); ?>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+<?php $this->endWidget(); ?>
         </div>
     </div>
 </div>
