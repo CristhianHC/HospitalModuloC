@@ -1,6 +1,8 @@
+    <?php
+    if ($modelFicha08->idAvieqF08!==NULL){?>
 <fieldset>
     <legend><h4>ACCIDENTE, VIOLENCIA, INTOXICACIÓN, ENVENENAMIENTO O QUEMADURA</h4></legend>
-    <?php
+        <?php 
     $this->widget('bootstrap.widgets.TbDetailView', array(
         'data' => $modelFicha08,
         'attributes' => array(
@@ -160,5 +162,5 @@
             ),
         ),
     ));
-    ?>
+    }?>
 </fieldset>

@@ -32,13 +32,11 @@ abstract class BaseInicioAtencionMotivoF08 extends AweActiveRecord {
     }
 
     public static function representingColumn() {
-        return 'otro_motivo';
+        return 'hora';
     }
 
     public function rules() {
         return array(
-            array('id_iam', 'required'),
-            array('id_iam', 'numerical', 'integerOnly'=>true),
             array('grupo_sanguineo_factor_rh', 'length', 'max'=>4),
             array('hora, trauma, causa_clinica, causa_gobstetrica, causa_quirurgica, notificacion_policia, otro_motivo', 'safe'),
             array('hora, trauma, causa_clinica, causa_gobstetrica, causa_quirurgica, notificacion_policia, otro_motivo, grupo_sanguineo_factor_rh', 'default', 'setOnEmpty' => true, 'value' => null),
@@ -48,7 +46,7 @@ abstract class BaseInicioAtencionMotivoF08 extends AweActiveRecord {
 
     public function relations() {
         return array(
-            'ficha08s' => array(self::BELONGS_TO, 'Ficha08', 'id_iam_f08'),
+            'ficha08s' => array(self::HAS_MANY, 'Ficha08', 'id_iam_f08'),
         );
     }
 

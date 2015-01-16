@@ -38,8 +38,6 @@ abstract class BaseExamenFisicoDiagnosticoF08 extends AweActiveRecord {
 
     public function rules() {
         return array(
-            array('id_exfidi', 'required'),
-            array('id_exfidi', 'numerical', 'integerOnly'=>true),
             array('cabeza, cuello, torax, abdomen, columna, pelvis, extremidad', 'length', 'max'=>2),
             array('via_aerea_destruida, observacion', 'safe'),
             array('via_aerea_destruida, cabeza, cuello, torax, abdomen, columna, pelvis, extremidad, observacion', 'default', 'setOnEmpty' => true, 'value' => null),

@@ -44,8 +44,7 @@ abstract class BaseSignosVitalesMedicinalesF08 extends AweActiveRecord {
 
     public function rules() {
         return array(
-            array('id_sivimi', 'required'),
-            array('id_sivimi, ocular_glasgow, verbal_glasgow, motora_glasgow, total_glasgow', 'numerical', 'integerOnly'=>true),
+            array('ocular_glasgow, verbal_glasgow, motora_glasgow, total_glasgow', 'numerical', 'integerOnly'=>true),
             array('frecuencia_cardiaca, frecuencia_respiratoria, temperatura_bucal, temperatura_axilar, peso_kg, talla_metro', 'numerical'),
             array('presion_arterial, reaccion_pupila_derecha, reaccion_pupila_izquierda, total_llenado_capilar, satura_oxigeno', 'safe'),
             array('presion_arterial, frecuencia_cardiaca, frecuencia_respiratoria, temperatura_bucal, temperatura_axilar, peso_kg, talla_metro, ocular_glasgow, verbal_glasgow, motora_glasgow, total_glasgow, reaccion_pupila_derecha, reaccion_pupila_izquierda, total_llenado_capilar, satura_oxigeno', 'default', 'setOnEmpty' => true, 'value' => null),

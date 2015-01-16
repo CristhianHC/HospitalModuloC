@@ -38,8 +38,6 @@ abstract class BaseAntecedentesPersonalesFamiliaresF08 extends AweActiveRecord {
 
     public function rules() {
         return array(
-            array('id_apyf', 'required'),
-            array('id_apyf', 'numerical', 'integerOnly'=>true),
             array('alergico, clinico, ginecologico, traumatog, quirurgico, farmacologo, psiquiatrico, otro, observacion', 'safe'),
             array('alergico, clinico, ginecologico, traumatog, quirurgico, farmacologo, psiquiatrico, otro, observacion', 'default', 'setOnEmpty' => true, 'value' => null),
             array('id_apyf, alergico, clinico, ginecologico, traumatog, quirurgico, farmacologo, psiquiatrico, otro, observacion', 'safe', 'on'=>'search'),

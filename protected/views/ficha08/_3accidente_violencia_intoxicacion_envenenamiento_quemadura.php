@@ -20,7 +20,6 @@
 
     <?php echo $form->errorSummary($modelAvieq) ?>
 
-                    <?php echo $form->textFieldRow($modelAvieq, 'id_avieq', array('class' => 'span5')) ?>
                         <?php echo $form->textAreaRow($modelAvieq,'lugar_evento',array('rows'=>6, 'cols'=>50, 'class'=>'span8')) ?>
                         <?php echo $form->textAreaRow($modelAvieq,'direccion_evento',array('rows'=>6, 'cols'=>50, 'class'=>'span8')) ?>
                         <?php echo $form->checkBoxRow($modelAvieq, 'custodia_policial') ?>

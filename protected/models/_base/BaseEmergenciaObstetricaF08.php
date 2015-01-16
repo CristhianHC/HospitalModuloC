@@ -48,8 +48,7 @@ abstract class BaseEmergenciaObstetricaF08 extends AweActiveRecord {
 
     public function rules() {
         return array(
-            array('id_emergencia_obstetrica', 'required'),
-            array('id_emergencia_obstetrica, gestas, partos, abortos, cesareas, semanas_gestacion, tiempo', 'numerical', 'integerOnly'=>true),
+            array('gestas, partos, abortos, cesareas, semanas_gestacion, tiempo', 'numerical', 'integerOnly'=>true),
             array('fecha_ultima_menstruacion, movimiento_fetal, frecuencia_c_fetal, membranas_rotas, altura_uterina, presentacion, dilatacion, borramiento, plano, pelvis_util, sangrado_vaginal, contracciones, observacion', 'safe'),
             array('gestas, partos, abortos, cesareas, fecha_ultima_menstruacion, semanas_gestacion, movimiento_fetal, frecuencia_c_fetal, membranas_rotas, tiempo, altura_uterina, presentacion, dilatacion, borramiento, plano, pelvis_util, sangrado_vaginal, contracciones, observacion', 'default', 'setOnEmpty' => true, 'value' => null),
             array('id_emergencia_obstetrica, gestas, partos, abortos, cesareas, fecha_ultima_menstruacion, semanas_gestacion, movimiento_fetal, frecuencia_c_fetal, membranas_rotas, tiempo, altura_uterina, presentacion, dilatacion, borramiento, plano, pelvis_util, sangrado_vaginal, contracciones, observacion', 'safe', 'on'=>'search'),

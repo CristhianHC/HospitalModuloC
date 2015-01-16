@@ -45,8 +45,6 @@ abstract class BaseLocalizacionLesionesF08 extends AweActiveRecord {
 
     public function rules() {
         return array(
-            array('id_localizacion_lesiones', 'required'),
-            array('id_localizacion_lesiones', 'numerical', 'integerOnly'=>true),
             array('herida_penetrante, herida_cortante, fractura_expuesta, fractura_cerrada, cuerpo_extrano, hemorragia, mordedura, picadura, excoriacion, deformidad_masa, hematoma, eritema_inflamacion, luxacion_esguince, quemadura, otro, definicion_cuerpo', 'safe'),
             array('herida_penetrante, herida_cortante, fractura_expuesta, fractura_cerrada, cuerpo_extrano, hemorragia, mordedura, picadura, excoriacion, deformidad_masa, hematoma, eritema_inflamacion, luxacion_esguince, quemadura, otro, definicion_cuerpo', 'default', 'setOnEmpty' => true, 'value' => null),
             array('id_localizacion_lesiones, herida_penetrante, herida_cortante, fractura_expuesta, fractura_cerrada, cuerpo_extrano, hemorragia, mordedura, picadura, excoriacion, deformidad_masa, hematoma, eritema_inflamacion, luxacion_esguince, quemadura, otro, definicion_cuerpo', 'safe', 'on'=>'search'),

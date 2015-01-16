@@ -45,8 +45,6 @@ abstract class BaseSolicitudExamenesF08 extends AweActiveRecord {
 
     public function rules() {
         return array(
-            array('id_solicitud_examenes', 'required'),
-            array('id_solicitud_examenes', 'numerical', 'integerOnly'=>true),
             array('biometria, quimica_sanguinea, gasometria, endoscopia, r_x_abdomen, tomografia, ecografia_pelvica, interconsulta, uroanalisis, electrolitos, electro_cardiograma, r_x_torax, r_x_osea, resonancia, ecografia_abdomen, otros', 'safe'),
             array('biometria, quimica_sanguinea, gasometria, endoscopia, r_x_abdomen, tomografia, ecografia_pelvica, interconsulta, uroanalisis, electrolitos, electro_cardiograma, r_x_torax, r_x_osea, resonancia, ecografia_abdomen, otros', 'default', 'setOnEmpty' => true, 'value' => null),
             array('id_solicitud_examenes, biometria, quimica_sanguinea, gasometria, endoscopia, r_x_abdomen, tomografia, ecografia_pelvica, interconsulta, uroanalisis, electrolitos, electro_cardiograma, r_x_torax, r_x_osea, resonancia, ecografia_abdomen, otros', 'safe', 'on'=>'search'),

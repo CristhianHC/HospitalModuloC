@@ -34,8 +34,6 @@ abstract class BaseEnfermedadActualRevisionSistemasF08 extends AweActiveRecord {
 
     public function rules() {
         return array(
-            array('id_earesi', 'required'),
-            array('id_earesi', 'numerical', 'integerOnly'=>true),
             array('via_aerea_libre, via_aerea_obstruida, condicion_estable, condicion_inestables, observaciones', 'safe'),
             array('via_aerea_libre, via_aerea_obstruida, condicion_estable, condicion_inestables, observaciones', 'default', 'setOnEmpty' => true, 'value' => null),
             array('id_earesi, via_aerea_libre, via_aerea_obstruida, condicion_estable, condicion_inestables, observaciones', 'safe', 'on'=>'search'),
